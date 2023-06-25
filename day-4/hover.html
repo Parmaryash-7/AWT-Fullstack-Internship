@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    <style>
+        li:hover {
+            background-color: chartreuse;
+            color: white;
+            display: unset;
+            border-radius: 5px;
+        }
+        div{
+            display: none;
+        }
+        li:hover+div{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Name</li>
+        <div>
+            <ul>
+                <li>Yash</li>
+                <li>Harsh</li>
+                <li>Darshan</li>
+            </ul>
+        </div>
+        <li>Address</li>
+        <li>E mail</li>
+        <li>contact</li>
+    </ul>
+</body>
+
+</html>
