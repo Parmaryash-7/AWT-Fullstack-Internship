@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+    <style>
+        p{
+            
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>please write the movie name</h1>
+<button onclick="myFunction()" data-togel="tooltip" title="hey!">Click here</button>
+<p id="hh"></p>
+<script>
+    function myFunction()
+ {
+        let person = prompt("please enter your movie name","K.G.F Chapter 2");
+        if ( person != null)
+        {
+            document.getElementById("hh").innerHTML="Sorry";
+        }
+ }
+</script>
+</body>
+</html>
