@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuary Basic</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+    </script>
+
+
+    <script type="text/javascript" src="myjavascript.js">
+        $(document).ready(function() {
+            //Set text using class name
+            $(".lbMessage").text("Welcome to Jquary");
+            //Apply css to all H1 tage
+            $("h1").css("background-color", "pink");
+            $("#btnGetLenght").click(function() {
+                $("#shw").text().length; //Call external file function
+            });
+
+
+
+        });
+    </script>
+    <style>
+        .lbMessage {
+            color: #b200ff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="lbMessage">1</span>
+    <h1>This is first paragraph.</h1>
+    <input type="text" id="firstName" /><br /><br />
+    <p id="shw"></p>
+    <button id="btnGetLenght">Get length of Name</button><br /><br />
+</body>
+
+</html>
+<!-- // JavaScript File : myjavascript.js function stringLength() { // Retrieving the values of form elements var name = $("#firstName").val(); alert("User name is :" + name.length); } jQuery Events A jQuery Event is the result of an action that can be detected
+by jQuery (JavaScript). Mouse Events Keyboard Events Form Events Document Events click keypress submit load dblclick keydown change resize hover keyup select scroll mousedown blur unload mouseup focusin ready -->
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuary Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+        < /scrip> <
+        script type = "text/javascript"
+        language = "javascript" >
+            //JQuery makes a use of anonymous functions
+            $(function() {
+                console.log("function");
+            });
+        $(document).ready(function() {
+            //$("div").bind('click', function(){});
+            $("#btnClickEvent").click(function() {
+                // jQuery code goes here
+                $(this).text('Button click');
+            });
+            $("#btnClickEvent").dblclick(function() {
+                $(this).text('Button bouble click');
+            });
+            $("#divMouseLeaveEnter").mouseenter(function() {
+                $(this).text('Cursor is in!');
+            });
+            $("#divMouseLeaveEnter").mouseleave(function() {
+                $(this).text('Curosr is out!');
+            });
+            $("#divMouseUpDown").mousedown(function() {
+                $(this).text('Mouse button is down!');
+            });
+            $("#divMouseUpDown").mouseup(function() {
+                $(this).text('Mouse button is released!');
+            });
+        });
+    </script>
+    <style>
+        div {
+            border: solid;
+            border-color: #808080;
+            border-width: 1px;
+            background-color: #f1f1f1;
+            margin: 20px;
+            padding: 10px;
+            font-size: 18px;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnClickEvent">Click / Double Click Events</button>
+    <div id="divMouseLeaveEnter"> Enter / Leave Mouse Events</div>
+    <div id="divMouseUpDown"> Up / Down Mouse Events</div>
+</body>
+
+</html>
+Attributes Every HTML element can have various standard and custom attributes (i.e. properties) which are used to define the characteristics of that HTML element. Standard tagName / id / className / href / title / src / style Custom data-*
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuary Attributes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        //JQuery makes a use of anonymous functions
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                var attrValues = "";
+                attrValues += "Href : " + $("#home").attr("href") + "\n";
+                attrValues += "Title : " + $("#home").attr("title") + "\n";
+                attrValues += "Class : " + $("#home").attr("class");
+                alert(attrValues);
+            });
+            $("#btn2").click(function() {
+                var attrValues = "";
+                attrValues += "Author Name : " + $("#div1").data("author-name") + "\n";
+                attrValues += "Year : " + $("#div1").data("year") + "\n";
+                alert(attrValues);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <a id="home" href="home.html" class="link" title="Click here goto Home Page ">
+ Home 
+ </a>
+    <br /><br />
+    <button id="btn1">Get stander attributes values </button>
+    <br /><br />
+    <div id="div1" data-author-name="Manish Patel" data-year="2022">
+        This is a Content part of div tag.
+    </div>
+    <br />
+    <button id="btn2">Get custom attribute vlaues</button>
+</body>
+
+</html>
+Effects jQuery enables us to add effects on a web page. jQuery effects can be categorized into below group : Display Hide / Show / Toggle Fading FadeIn / FadeOut / FadeToggle / FadeTo Sliding SlideDown / SlideUp / SlideToggle Other Animate / Delay
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuary Attributes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        //JQuery makes a use of anonymous functions
+        $(document).ready(function() {
+            $("#btnHide").click(function() {
+                $("#divHideShow").hide();
+            });
+            $("#btnShow").click(function() {
+                $("#divHideShow").show(1500);
+                //jQuery show effect with 1500 milliseconds speed.
+            });
+            $("#btnCallback").click(function() {
+                $("#divHideShow").hide(2000, message);
+            });
+            $("#btnToggle").click(function() {
+                $("#divToggle").toggle();
+            });
+            $("#btnSlideUp").click(function() {
+                $("#divSlide").slideUp();
+            });
+            $("#btnSlideDown").click(function() {
+                $("#divSlide").slideDown();
+            });
+            $("#btnSlideToggle").click(function() {
+                $("#divSlide").slideToggle()();
+            });
+        });
+
+        function message() {
+            alert("The paragraph is now hidden");
+        }
+    </script>
+    <style>
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        
+        div {
+            border: solid;
+            border-width: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnHide">Hide</button><button id="btnShow">Show</button> <button id="btnCallback">Callback</button>
+    <h3>Div Show / Hide</h3>
+    <div id="divHideShow">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <hr />
+    <button id="btnToggle">Toggle</button>
+    <h3>Div Toggle</h3>
+    <div id="divToggle">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <hr />
+    <button id="btnSlideUp">Slide Up</button><button id="btnSlideDown">Slide 
+Down</button> <button id="btnSlideToggle">Slide Toggle</button>
+    <h3>Div Fade In / Out</h3>
+    <div id="divSlide">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+</body>
+
+</html> -->
